@@ -1,0 +1,2 @@
+CollectionAssignment.printLowercase();
+CollectionAssignment.printUppercase();

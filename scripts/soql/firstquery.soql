@@ -1,0 +1,16 @@
+select id , name, phone from Account
+
+select id ,name ,project_name__c ,status__c,description__c from Salesforce_Project__c
+
+//Get top 3 accounts with highest annual revenue
+select Name, Type, AnnualRevenue from Account order by AnnualRevenue desc limit 3
+
+//Get top 3 accounts with smallest annual revenue
+select id, Name, Type, AnnualRevenue from Account order by AnnualRevenue limit 3
+
+//Get top 3 accounts with the highest annual revenue:
+SELECT Name, AnnualRevenue FROM Account  where AnnualRevenue > 100000 ORDER BY AnnualRevenue DESC 
+LIMIT 3
+
+
+GROUP BY Account.Name

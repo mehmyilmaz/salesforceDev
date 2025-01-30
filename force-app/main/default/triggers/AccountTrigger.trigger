@@ -1,6 +1,15 @@
-trigger AccountTrigger on Account (before insert,before update,before delete ,after insert, after update ,after delete,after undelete) {
+trigger AccountTrigger on Account (before insert) {
        System.debug('--------trigger start-------');
-
+       List<Account> newAccounts = trigger.new;
+      for (Account acc : newAccounts) {
+        acc.ShippingStreet = acc.BillingStreet;
+        acc.ShippingCity = acc.BillingCity;
+        acc.ShippingState = acc.BillingState;
+        acc.ShippingPostalCode = acc.BillingPostalCode;
+        acc.ShippingCountry = acc.BillingCountry;
+        
+      }
+        
 
     //    
 
